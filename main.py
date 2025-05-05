@@ -72,3 +72,34 @@ print(f"Highest Temperate : { max_temperature}")
 # find the lowest gas price 
 min_price =dataset["Fuel_Price"].min()
 print(f"Lowest gas price : { min_price}")   
+
+# Data Visualization    
+import matplotlib.pyplot as plt 
+data ={
+    "Student": [ "bhargavi", "Sai", "Bob", "Eve", "David"],
+    "math":[85, 90, 78, 92, 88],
+    "science":[20, 30, 36, 65, 82],
+    "English":[45, 63, 56, 76,82],
+    "Gender":["Male", "Female", "Male", "Female", "Male"]
+  
+} 
+df2 = pd.DataFrame(data)
+
+print(df2)
+
+
+plt.figure(figsize=(10,6))
+plt.bar(df2["Student"], df2["math"], color="blue", label="math")
+plt.bar(df2["Student"], df2["science"], color="green", label="science")
+plt.bar(df2["Student"], df2["English"], color="red", label="English")
+plt.legend()
+plt.show()
+
+
+
+plt.figure(figsize=(10,6))
+plt.plot(df2["Student"], df2["math"], color="blue", label="math")
+plt.plot(df2["Student"], df2["science"], color="green", label="science")
+plt.plot(df2["Student"], df2["English"], color="red", label="English")
+plt.legend()
+plt.show()
